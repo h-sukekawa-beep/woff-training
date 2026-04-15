@@ -10,10 +10,16 @@
   <!-- ====================================== -->
   <script>
     // 1. WOFF ID（Developer Consoleで発行したもの）
-    const WOFF_ID = 'YOUR_WOFF_ID'; 
+    const WOFF_ID = 'w6gsU65g7MSlPhGhwowPVQ'; 
     
     // 2. GASのWebアプリURL（デプロイ後に取得したもの）
     const GAS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbxmGsktTWSwlU5S3JSuqUJJC88qw4GwyiGBCgH7u7Ly3bhfRvn2ynGU_bcAKQvRsl_RjA/exec';
+  </script>
+
+  <!-- vConsole の読み込みと初期化（スマホ実機でのログ確認用） -->
+  <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+  <script>
+    var vConsole = new window.VConsole();
   </script>
 
   <!-- プレミアムなデザインのためのGoogle Fonts -->
@@ -241,14 +247,19 @@
     });
 
     function initWoff() {
+      console.log("WOFF初期化処理を開始します... WOFF_ID: " + WOFF_ID);
       woff.init({ woffId: WOFF_ID }).then(() => {
+        console.log("woff.init 成功！");
         // 初期化成功後
         woff.ready.then(() => {
+          console.log("woff.ready 完了。");
           document.getElementById('loading').style.display = 'none'; // ローディング非表示
           
           if (woff.isLoggedIn()) {
             // プロフィール取得
+            console.log("woff.getProfile() を実行します...");
             woff.getProfile().then(profile => {
+              console.log("プロフィール取得成功: ", profile);
               const name = profile.displayName;
               
               // ウェルカムメッセージの表示
