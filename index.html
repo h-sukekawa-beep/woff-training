@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>日報入力 WOFF アプリ</title>
   
+  <!-- ====================================== -->
+  <!-- ハンズオン環境設定エリア -->
+  <!-- ====================================== -->
+  <script>
+    // 1. WOFF ID（Developer Consoleで発行したもの）
+    const WOFF_ID = 'YOUR_WOFF_ID'; 
+    
+    // 2. GASのWebアプリURL（デプロイ後に取得したもの）
+    const GAS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbxmGsktTWSwlU5S3JSuqUJJC88qw4GwyiGBCgH7u7Ly3bhfRvn2ynGU_bcAKQvRsl_RjA/exec';
+  </script>
+
   <!-- プレミアムなデザインのためのGoogle Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
@@ -220,15 +231,6 @@
   </div>
 
   <script>
-    // ======================================
-    // ハンズオン環境設定
-    // ======================================
-    // WOFF ID（Developer Consoleで発行したもの）
-    const WOFF_ID = 'YOUR_WOFF_ID'; 
-    // GASのWebアプリURL（デプロイ後に取得したもの）
-    const GAS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbxmGsktTWSwlU5S3JSuqUJJC88qw4GwyiGBCgH7u7Ly3bhfRvn2ynGU_bcAKQvRsl_RjA/exec';
-    // ======================================
-
     document.addEventListener("DOMContentLoaded", () => {
       // 日付の初期値を今日にセット
       const today = new Date().toISOString().split('T')[0];
